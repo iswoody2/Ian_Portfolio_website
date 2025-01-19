@@ -1,0 +1,229 @@
+
+
+
+/* Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'sans-serif';
+    color: #000;
+}
+
+
+.container-fuild{
+    text-align: center;
+    padding: 3%
+}
+
+/* Home Page */
+
+#index .container-fuild{
+    height: 83vh;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/Snow_trip.png");
+    background-size: cover ;
+    background-repeat: no-repeat;
+}
+
+#index_2{
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#index_3{
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.links{
+    width: 25%;
+    position: relative;
+    color: #000;
+    display: inline-block;
+    background-color: #b6edff;
+    text-decoration: none;
+    transition: 1s;
+    clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+}
+
+.links:hover{
+    background-color: #b6edff;
+    color: black;
+    clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 10% 100%, 0% 50%, 10% 0);
+}
+
+/* About */
+
+#About .container-fuild{
+    background-color: #F0F8FE;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    gap: 30px
+}
+
+#About img {
+    height: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#About .left, .right{
+    flex: 1;
+}
+
+
+
+/* CV */
+
+#CV .container-fuild{
+    max-width: 100%;
+    padding: 10%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F0F8FE;
+}
+
+.CV-btn{
+    position:relative;
+    padding:4%;
+    cursor: pointer;
+    background-color: #B2E7F4;
+    color: black;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+
+}
+
+.CV-btn:hover{
+    box-shadow: 0 5px 40px rgba(0, 0, 0, .2);
+}
+
+.CV-btn:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140;
+    transition: all .5s ease-in-out;
+}
+
+/* Portfolio */
+
+
+
+.bento {
+    text-align: center;
+    align-items: center;
+    background-color: #F0F8FE;
+    padding: 5%;
+    
+    .bento-grid {
+        display: grid;
+        grid-gap:30px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 500px;
+
+        @media(max-width:768px){
+            display:flex;
+            flex-direction: column;
+            gap:20px;
+            height:auto;
+        }
+
+
+        .bento-item {
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            img {
+                position:absolute;
+                top:0;
+                left:0;
+                height:100%;
+                object-fit: cover;
+                transition: ease 3s all;
+            }
+            &:hover{
+                img{
+                    transform:scale(1.2)
+                }
+            }
+
+            border-radius:15px;
+            @media(max-width: 768px){
+                height: 240px;
+            }
+            &:nth-child(1) {
+                grid-column: span 2;
+                grid-row:span 1;
+            }
+            &:nth-child(2) {
+                    grid-column: span 2;
+                    grid-row:span 2;
+            }
+            
+            &:nth-child(3) {
+                grid-column: span 1;
+                grid-row:span 3;
+            }
+
+        }
+    }
+}
+
+
+
+
+/* Contact */
+
+
+footer .container-fuild{
+    background-color: #fff;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+footer .icon svg{
+    height: 80px;
+}
+
+.icon :hover{
+    transform: scale(1.1);
+}
+
+footer .address{
+    margin:0;
+    padding:0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+
+/* Mobile */
+
+@media (max-width:768px){
+#About img{
+    width: 100%;
+}
+
+#About .container-fuild{
+    flex-direction: column;
+}
+
+
+}
