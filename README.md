@@ -19,6 +19,12 @@ This website is built with the following:
 -Version Control: Managed with Git/GitHub to track changes and updates.
 -No additional libraries or frameworks were used, ensuring a lightweight and efficient setup.
 
+📬 Contact
+
+If you have any questions, feel free to reach out via the contact form on my website or connect with me on social media. Links can be found in the footer of the site.
+
+Thank you for visiting my personal website! 💻🌟
+
 ✨ Impact
 
 This website aims to:
