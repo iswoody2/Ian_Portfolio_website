@@ -69,11 +69,12 @@ body {
     display: flex;
     justify-content: space-between;
     max-width: 100%;
-    gap: 30px
+    gap: 10px
 }
 
 #About img {
-    height: 400px;
+    height: 500px;
+    max-width: 100%;
     border-radius: 20px;
     object-fit: cover;
 }
@@ -88,7 +89,7 @@ body {
 
 #CV .container-fuild{
     max-width: 100%;
-    padding: 10%;
+    padding: 5%;
     align-items: center;
     justify-content: space-between;
     background-color: #F0F8FE;
@@ -96,7 +97,7 @@ body {
 
 .CV-btn{
     position:relative;
-    padding:4%;
+    padding:3%;
     cursor: pointer;
     background-color: #B2E7F4;
     color: black;
@@ -121,8 +122,6 @@ body {
 
 /* Portfolio */
 
-
-
 .bento {
     text-align: center;
     align-items: center;
@@ -132,8 +131,8 @@ body {
     .bento-grid {
         display: grid;
         grid-gap:30px;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
         height: 500px;
 
         @media(max-width:768px){
@@ -168,7 +167,7 @@ body {
             }
             &:nth-child(1) {
                 grid-column: span 2;
-                grid-row:span 1;
+                grid-row:span 2;
             }
             &:nth-child(2) {
                     grid-column: span 2;
@@ -176,8 +175,13 @@ body {
             }
             
             &:nth-child(3) {
-                grid-column: span 1;
-                grid-row:span 3;
+                grid-column: span 2;
+                grid-row:span 2;
+            }
+
+            &:nth-child(4) {
+                grid-column: span 2;
+                grid-row:span 2;
             }
 
         }
