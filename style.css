@@ -1,6 +1,7 @@
 
 
 
+
 /* Body */
 * {
     margin: 0;
@@ -8,64 +9,105 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family:'sans-serif';
-    color: #000;
+:root{
+    --primary-color: #2C3930;
+    --primary-2-color: #3F4F44;
+    --accent-colour: #A27B5C;
+    --accent-2-colour: #DCD7C9;
 }
 
+body {
+    font-family:'sans-serif';
+    color:var(--primary-color);
+}
 
 .container-fuild{
     text-align: center;
     padding: 3%
 }
 
-/* Home Page */
+/* Home image */
 
-#index .container-fuild{
-    height: 83vh;
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-image: url("./images/Snow_trip.png");
-    background-size: cover ;
-    background-repeat: no-repeat;
+#home img{
+    width: 100%;
+    height: auto;
 }
 
-#index_2{
+#home-image{
+    transition: opacity 0.5s ease-in-out;
+}
+
+#home-image.hidden {
+    opacity: 0;
+}
+
+#home .container-fuild{
+    background-color:var(--primary-2-color);
+}
+
+
+/* Links */
+
+#index{
     max-width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-#index_3{
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background-color: var(--accent-colour);
 }
 
 .links{
     width: 25%;
     position: relative;
-    color: #000;
+    color: var(--accent-2-colour);
     display: inline-block;
-    background-color: #b6edff;
+    background-color: var(--primary-color);
     text-decoration: none;
     transition: 1s;
     clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
 }
 
 .links:hover{
-    background-color: #b6edff;
-    color: black;
+    background-color: var(--primary-2-color);
+    color: var(--accent-2-colour);
     clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 10% 100%, 0% 50%, 10% 0);
 }
+
+/* Styles for mobile */
+@media (max-width: 600px) {
+    /* Initially hide the links container */
+    .menu-links{
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .links {
+        width: 40%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .show-menu {
+        display: flex; /* Show the menu */
+    }
+}
+
+/* Change */
+
+#change .container-fuild{
+    background-color: var(--accent-2-colour);
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 10%;
+}
+
 
 /* About */
 
 #About .container-fuild{
-    background-color: #F0F8FE;
+    background-color: var(--accent-2-colour);
     display: flex;
     justify-content: space-between;
     max-width: 100%;
@@ -92,32 +134,16 @@ body {
     padding: 5%;
     align-items: center;
     justify-content: space-between;
-    background-color: #F0F8FE;
+    background-color: var(--primary-color);
 }
 
-.CV-btn{
+#CV .CV-btn{
     position:relative;
     padding:3%;
     cursor: pointer;
-    background-color: #B2E7F4;
-    color: black;
+    background-color: var(--primary-2-color);
+    color: var(--accent-2-colour);
     border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
-
-}
-
-.CV-btn:hover{
-    box-shadow: 0 5px 40px rgba(0, 0, 0, .2);
-}
-
-.CV-btn:after{
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 490%;
-    width: 140;
-    transition: all .5s ease-in-out;
 }
 
 /* Portfolio */
@@ -125,17 +151,17 @@ body {
 .bento {
     text-align: center;
     align-items: center;
-    background-color: #F0F8FE;
-    padding: 5%;
+    background-color: var(--accent-2-colour);
+    padding: 2%;
     
     .bento-grid {
         display: grid;
-        grid-gap:30px;
+        grid-gap:20px;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(5, 1fr);
-        height: 500px;
+        height: 400px;
 
-        @media(max-width:768px){
+        @media(max-width:600px){
             display:flex;
             flex-direction: column;
             gap:20px;
@@ -162,8 +188,12 @@ body {
             }
 
             border-radius:15px;
-            @media(max-width: 768px){
+            @media(max-width: 600px){
                 height: 240px;
+                .bento-item img {
+                    width: 100%;
+                    object-fit: contain;
+                }
             }
             &:nth-child(1) {
                 grid-column: span 2;
@@ -183,6 +213,7 @@ body {
                 grid-column: span 2;
                 grid-row:span 2;
             }
+
             &:nth-child(5) {
                 grid-column: span 2;
                 grid-row:span 2;
@@ -196,19 +227,25 @@ body {
 
 /* Contact */
 
-
 footer .container-fuild{
-    background-color: #fff;
+    background-color: var(--accent-colour);
     max-width: 100%;
     max-height: 100%;
+    padding:8%;
 }
 
-footer .icon svg{
-    height: 80px;
-}
-
-.icon :hover{
+/* Linkedin */
+.linkedin_icon:hover svg {
+    fill: #0077b5; 
     transform: scale(1.1);
+    transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+
+/* Github */
+.github_icon:hover svg {
+    fill: #ff0000; 
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
 footer .address{
@@ -223,7 +260,7 @@ footer .address{
 
 /* Mobile */
 
-@media (max-width:768px){
+@media (max-width:600px){
 #About img{
     width: 100%;
 }
@@ -234,3 +271,4 @@ footer .address{
 
 
 }
+
