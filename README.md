@@ -14,7 +14,7 @@ The purpose of this personal website is to:
 🛠️ Technologies Used
 
 This website is built with the following:
--Frontend: HTML5 and CSS3 for structure and styling.
+-Frontend: HTML, CSS and Javascript for structure, styling and functionality.
 -Hosting: Deployed on GitHub Pages for seamless and reliable hosting.
 -Version Control: Managed with Git/GitHub to track changes and updates.
 -No additional libraries or frameworks were used, ensuring a lightweight and efficient setup.
