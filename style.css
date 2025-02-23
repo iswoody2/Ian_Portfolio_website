@@ -19,32 +19,27 @@
 body {
     font-family:'sans-serif';
     color:var(--primary-color);
+    font-size:16px;
+}
+
+@media(max-width: 42em){
+    body{
+        font-size:14px;
+    }
 }
 
 .container-fuild{
     text-align: center;
-    padding: 3%
+    padding: 5%
 }
 
-/* Home image */
-
-#home img{
-    max-width: 100%;
-    max-height: 100%;
+h1{
+   font-size: 1.96rem;
 }
 
-#home-image{
-    transition: opacity 0.5s ease-in-out;
+h2{
+   font-size: 1.5rem;
 }
-
-#home-image.hidden {
-    opacity: 0;
-}
-
-#home .container-fuild{
-    background-color:var(--accent-2-colour);
-}
-
 
 /* Links */
 
@@ -73,36 +68,39 @@ body {
     clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 10% 100%, 0% 50%, 10% 0);
 }
 
-/* Styles for mobile */
-@media (max-width: 600px) {
-    /* Initially hide the links container */
-    .menu-links{
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-    }
 
-    .links {
-        width: 40%;
-        text-align: center;
-        margin: 5px 0;
-    }
 
-    .show-menu {
-        display: flex; /* Show the menu */
-    }
+/* Home image */
+
+#home img{
+    max-width: 85%;
+    max-height: 85%;
+    margin-top: 5%;
+    border: 10px dashed var(--primary-2-color)
+}
+
+#home-image{
+    transition: opacity 0.5s ease-in-out;
+}
+
+#home-image.hidden {
+    opacity: 0;
+}
+
+#home .container-fuild{
+    background-color:var(--accent-2-colour);
 }
 
 /* Change */
 
 #change .container-fuild{
-    background-color: var(--accent-2-colour);
+    background-color: var(--primary-2-color);
+    color: var(--accent-2-colour);
     justify-content: space-between;
     max-width: 100%;
     text-align: center;
     padding: 5%;
 }
-
 
 /* About */
 
@@ -115,31 +113,35 @@ body {
 }
 
 #About img {
-    height: 400px;
+    height: 100%;
     max-width: 100%;
     border-radius: 20px;
     object-fit: cover;
+}
+
+@media(max-width: 42em) {
+    #About img{
+    height: 50%;
+    max-width: 70%;
+    }
 }
 
 #About .left, .right{
     flex: 1;
 }
 
-
-
 /* CV */
 
 #CV .container-fuild{
-    max-width: 100%;
     padding: 5%;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: space-between;
     background-color: var(--primary-color);
+    color: var(--accent-2-colour);
 }
 
 #CV .CV-btn{
-    position:relative;
-    padding:3%;
+    padding:2%;
     cursor: pointer;
     background-color: var(--primary-2-color);
     color: var(--accent-2-colour);
@@ -148,88 +150,58 @@ body {
 
 /* Portfolio */
 
-.bento {
-    text-align: center;
-    align-items: center;
+
+#Portfolio{
     background-color: var(--accent-2-colour);
-    padding: 2%;
-    
-    .bento-grid {
-        display: grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        height: 400px;
-
-        @media(max-width:600px){
-            display:flex;
-            flex-direction: column;
-            gap:20px;
-            height:auto;
-        }
+    padding: 5%;
+    text-align: center;
+    gap: 10px;
+}
 
 
-        .bento-item {
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-            img {
-                position:absolute;
-                top:0;
-                left:0;
-                height:100%;
-                object-fit: cover;
-                transition: ease 3s all;
-            }
-            &:hover{
-                img{
-                    transform:scale(1.2)
-                }
-            }
-
-            border-radius:15px;
-            @media(max-width: 600px){
-                height: 240px;
-                .bento-item img {
-                    width: 100%;
-                    object-fit: contain;
-                }
-            }
-            &:nth-child(1) {
-                grid-column: span 2;
-                grid-row:span 2;
-            }
-            &:nth-child(2) {
-                    grid-column: span 2;
-                    grid-row:span 2;
-            }
-            
-            &:nth-child(3) {
-                grid-column: span 2;
-                grid-row:span 2;
-            }
-
-            &:nth-child(4) {
-                grid-column: span 2;
-                grid-row:span 2;
-            }
-
-            &:nth-child(5) {
-                grid-column: span 2;
-                grid-row:span 2;
-            }
-
-            &:nth-child(6) {
-                grid-column: span 2;
-                grid-row:span 2;
-            }
-
-        }
-    }
+.box{
+    background-color: var(--primary-2-color);
+    color: var(--accent-2-colour);
+    text-align: center;
+    padding:5%;
 }
 
 
 
+.grid-container {
+    display: grid;
+    justify-content: center;
+    grid-auto-columns: 200px;
+    grid-auto-rows: 200px;
+    gap: 1em;
+    grid-template-areas:
+    "box-1 box-4 box-5"
+    "box-2 box-4 box-3";
+}
+
+@media(max-width: 56em){
+    .grid-container{
+        grid-template-areas:
+        "box-1 box-2"
+        "box-4 box-5"
+        "box-4 box-3";
+    }
+}
+
+@media(max-width: 42em){
+    .grid-container{
+    grid-template-areas: 
+    "box-1 box-2"
+    "box-3 box-4"
+    "box-5 box-4"
+    }
+
+}
+
+.box img{
+    max-width: 100%;
+    display: block;
+}
 
 /* Contact */
 
@@ -248,14 +220,12 @@ footer .container-fuild{
 
 /* Github */
 .github_icon:hover svg {
-    fill: #ff0000; 
+    fill: #DCD7C9; 
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
-footer .address{
-    margin:0;
-    padding:0;
+footer .address{   
     display: flex;
     align-items: center;
     gap: 10px;
@@ -263,9 +233,9 @@ footer .address{
 }
 
 
-/* Mobile */
+/* About Mobile */
 
-@media (max-width:600px){
+@media (max-width:42em){
 #About img{
     width: 100%;
 }

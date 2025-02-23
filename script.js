@@ -39,15 +39,13 @@ cvButton.addEventListener("click", function (event) {
     cvButton.textContent = "Loading...";
     cvButton.style.pointerEvents = "none"; // Disable further clicks
 
-    // Simulate a delay (e.g., 2 seconds)
     setTimeout(() => {
         // Trigger the download by creating a temporary link element
         const link = document.createElement('a');
         link.href = cvButton.href;  // Set the link's href to the CV file
-        link.download = cvButton.href.split("/").pop(); // Set the filename to the file's name
+        link.download = cvButton.href.split("/").pop(); 
         link.click();  // Trigger the download
 
-        // Optionally, reset the button text and re-enable pointer events
         cvButton.textContent = "Download Ian's CV";
         cvButton.style.pointerEvents = "auto";
     }, 1000); // Delay in milliseconds (adjust if needed)
