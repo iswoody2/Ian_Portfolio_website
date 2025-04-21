@@ -2,6 +2,7 @@
 const images = [
     './images/Greenland.png', // first image
     './images/Snow_trip.png', // second image
+    './images/Mountains.png',
 ];
 
 // Begin with first image 
