@@ -141,6 +141,7 @@ h2{
 }
 
 #CV .CV-btn{
+    gap: 1rem;
     padding:2%;
     cursor: pointer;
     background-color: var(--primary-2-color);
