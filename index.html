@@ -3,61 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ian Wood | Law Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 50px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header {
+            font-size: 1.2em;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #f9f9f9;
+        }
+
+        section p{  
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #004080;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0066cc;
+        }
+
+        footer {
+            background-color: #e6e6e6;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Parallax sections */
+        .parallax {
+            height: 600px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .parallax.one {
+            background-image: url('/images/Ballon_flying_in.jpg'); /* replace with your first image */
+        }
+        .parallax.two {
+            background-image: url('images/Ballon_landing.jpg'); /* replace with your second image */
+        }
+
+        /* Optional overlay text on parallax */
+        .parallax-text {
+            color: white;
+            font-size: 2em;
+            padding-top: 150px;
+            text-shadow: 2px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .story {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.section img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Alternate layouts */
+.section.left img {
+  order: 0; /* Image on the left */
+}
+
+.section.right img {
+  order: 1; /* Image on the right */
+}
+
+.section.right img {
+  flex-direction: row-reverse; /* Flip image to the right */
+}
+
+/* Make it responsive */
+@media (max-width: 700px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .section.right {
+    flex-direction: column;
+  }
+}
+    </style>
 </head>
 <body>
 
+<header>
+    <h1>Ian Wood</h1>
+    <p> Law Graduate | M.Sc. Computer Science | Interested in Legal Practice & Practice </p>
+</header>
 
-    <section>
-        <div id = "index">
-            <div class = "container-fuild">
-                <h1>Ian Wood</h1>
-            <div id="menu-links" class = "menu-links">
-                <a href = 'index.html' class="links"> Home </a>
-                <a href = 'about.html' class="links"> About </a>
-                <a href = 'portfolio.html' class="links"> Portfolio </a>
-            </div>
-            </div>
-        </div>
-    </section>
+<div class="parallax one">
+    <div class="parallax-text">Welcome to my Story!!</div>
+</div>
 
-    <section id = home>
-        <div class = "container-fuild">
-            <img id="home-image" src="./images/Mountains.png">
-        </div>
-    </section>
+<section>
+    <h2>A long, long time ago in a small town in Colombia</h2>
+    <div class="story">
 
-    <section id = change>
-            <div class = "container-fuild">
-            <h2>Why these Pictures?</h2>
-            <br>
-            <p>All these pictures are from my mountaineering and climbing 
-                adventures across the UK. These experiences 
-                reflect qualities I bring to my career transition from law to tech: 
-                tackling challenges head-on, adapting to change, and staying focused under 
-                pressure, with a passion for exploring new opportunities and solving complex problems.</p>
-            </div>
-    </section>
+  <div class="section left">
+    <img src="/images/Briefcase.png" alt="Briefcase">
+    <p>
+        Just kidding! I’m not going that far back for this. I guess it all started with a Franz Kafka book called *The Trial*. It was a Christmas gift from my parents after I told them I wanted to become a lawyer. As I read it, I realised that the law is a complete mess. Although the lawyer in the book is somewhat useless, it made me realise that lawyers are the ones who can translate this mess and help businesses and individuals understand the law.
+    </div>
+    <p>
+        I was thrilled to be accepted to the University of Aberdeen, drawn by its strong law program and the chance to explore the Scottish Highlands. When I wasn’t in the library, I was climbing, eventually becoming the mountaineering club’s instructor and earning the Local Aberdeen Hero award for promoting climbing in the community.
+    </p>
+    
+
+    <div class="section right">
+    <img src="images/Hammer.png" alt="Hammer">
+    <p>
+        Fast forward a few years of studying law, and near the end of my degree, I started looking up at the stars. Space law was offered as an elective, so I thought, why not write my dissertation about it and see where it takes me? I did, and loved every minute of it. I even got to present my article at a conference in Toulouse, France, where I spoke with people representing Airbus and Thales Alenia Space. My paper was later published in the *Space Market Dynamics Journal* at the University of Toulouse, and I was proud to be the only undergraduate presenting at the conference.
+    </p>
+    </div>
+    <p>
+       After graduating, I returned to my hometown of Windsor and joined Aston Bond, an award-winning Top 500 law firm, as a Corporate/Commercial Paralegal. During my time there, I worked on everything from commercial leases to corporate mergers and acquisitions, even receiving the chance to get involved in a few international transactions. I loved the fast-paced nature of the work and often went beyond my usual responsibilities, handling trademark filings, reviewing commercial contracts, and supporting the team with legal research and drafting. I also managed SDLT returns and HMLR applications, the kind of detailed work that really sharpened my precision and understanding of corporate law in practice.
+    </p>
+    
+
+    <div class="section left">
+    <img src="images/Report.png" alt="Report">
+    <p>
+        Around that time, artificial intelligence started to boom. To stand out in the legal industry and deepen my knowledge, I decided to pursue a Master’s in Computer Science at the University of York while continuing my paralegal work. During this time, I created several legal tech projects - including “Supreme Court AI,” which uses OpenAI language models to summarise Supreme Court cases for non-legal audiences. I’m currently writing my thesis on developing a machine learning model for detecting deepfake manipulations in support of the Online Safety Act 2023, with the goal of exploring how AI can protect against deepfakes on online platforms.
+
+    </p>
+    </div>
+    <p>
+        I eventually left my paralegal role to explore life as a freelance developer, founding my own business, Cali-Wood. Working closely with clients to bring their ideas to life reminded me how much I value communication, problem-solving, and collaboration. These are the same qualities that first drew me to law. That experience helped me realise that my work is most meaningful at the intersection of law and technology, where I can combine legal expertise with innovation to deliver practical solutions. I’m now excited to explore opportunities in legal practice or legal tech, where I can use both my legal and technical knowledge to help clients navigate complex challenges.
+    </p>
+    
+
+    </div>
+    <a id= "cvButton" class="btn" href= "Law_lan_CV.pdf"> Download CV</a>
+</section>
 
 
-    <footer id="Contact">
-        <div class = "container-fuild">
-            <h2>Get in touch</h2>
-        <br>
-            <p>Feel free to get in touch to discuss opportunities, collaborations, or just to say hello—I'd love to hear from you!</p>
-        <br>
-            <div class="address">
-                    <div class="linkedin_icon">
-                        <a href = "https://www.linkedin.com/in/ian-wood-4b06111a1/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                </div>
-                    <div class="github_icon">
-                        <a href= "https://github.com/iswoody2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                </div>
-            </div>
-    </footer>
+<div class="parallax two">
+    <div class="parallax-text">Thanks for reading!! </div>
+</div>
 
-    <script src="script.js"></script>
+<footer>
+      <p> 2025 Ian Wood. All Rights Reserved.</p> 
+</footer>
+
 </body>
+<script>
+  // Get the button element by its ID
+  const cvButton = document.getElementById("cvButton");
+
+  // Add a click event listener to the button
+  cvButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      cvButton.textContent = "Loading...";
+      cvButton.style.pointerEvents = "none";
+
+      setTimeout(() => {
+          const link = document.createElement('a');
+          link.href = cvButton.href;
+          link.download = cvButton.href.split("/").pop(); 
+          link.click();
+
+          cvButton.textContent = "Download Ian's CV";
+          cvButton.style.pointerEvents = "auto";
+      }, 1000);
+  });
+</script>
 </html>
 
