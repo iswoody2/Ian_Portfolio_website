@@ -60,12 +60,12 @@
 
         /* Parallax sections */
         .parallax {
-            height: 600px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+  height: 600px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 @media (max-width: 768px) {
   .parallax {
@@ -74,11 +74,14 @@
     background-position: center top;
   }
 }
+
         .parallax.one {
             background-image: url('/images/Ballon_flying_in.jpg'); /* replace with your first image */
+             background-position: center 30%;
         }
         .parallax.two {
             background-image: url('images/Ballon_landing.jpg'); /* replace with your second image */
+             background-position: center 30%;
         }
 
         /* Optional overlay text on parallax */
@@ -140,7 +143,7 @@
 
 <header>
     <h1>Ian Wood</h1>
-    <p> Law Graduate | M.Sc. Computer Science | Interested in Legal Practice & Tech </p>
+    <p> Law Graduate | M.Sc. Computer Science | Interested in Legal Practice & Practice </p>
 </header>
 
 <div class="parallax one">
@@ -185,7 +188,7 @@
     
 
     </div>
-   
+    <a id= "cvButton" class="btn" href= "https://www.linkedin.com/in/ian-wood-4b06111a1/">Follow my Journey on Linkedin</a>
 </section>
 
 
@@ -199,7 +202,7 @@
 
 </body>
 <script>
-  const cvButton = document.getElementById("cvButton");
+ const cvButton = document.getElementById("cvButton");
 
 cvButton.addEventListener("click", function (event) {
     event.preventDefault();
@@ -223,10 +226,12 @@ cvButton.addEventListener("click", function (event) {
             document.body.removeChild(link);
         }
 
-        cvButton.textContent = "Download Ian's CV";
+        cvButton.textContent = "Follow my Journey on Linkedin";
         cvButton.style.pointerEvents = "auto";
     }, 1000);
 });
+
+ 
 </script>
 </html>
 
