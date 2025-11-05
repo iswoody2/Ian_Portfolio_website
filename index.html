@@ -199,25 +199,34 @@
 
 </body>
 <script>
-  // Get the button element by its ID
   const cvButton = document.getElementById("cvButton");
 
-  // Add a click event listener to the button
-  cvButton.addEventListener("click", function (event) {
-      event.preventDefault();
-      cvButton.textContent = "Loading...";
-      cvButton.style.pointerEvents = "none";
+cvButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    cvButton.textContent = "Loading...";
+    cvButton.style.pointerEvents = "none";
 
-      setTimeout(() => {
-          const link = document.createElement('a');
-          link.href = cvButton.href;
-          link.download = cvButton.href.split("/").pop(); 
-          link.click();
+    setTimeout(() => {
+        // Detect iOS or mobile
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-          cvButton.textContent = "Download Ian's CV";
-          cvButton.style.pointerEvents = "auto";
-      }, 1000);
-  });
+        if (isMobile) {
+            // Open in a new tab on mobile
+            window.open(cvButton.href, '_blank');
+        } else {
+            // Force download on desktop
+            const link = document.createElement('a');
+            link.href = cvButton.href;
+            link.download = cvButton.href.split("/").pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        cvButton.textContent = "Download Ian's CV";
+        cvButton.style.pointerEvents = "auto";
+    }, 1000);
+});
 </script>
 </html>
 
