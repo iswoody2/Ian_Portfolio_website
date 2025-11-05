@@ -66,6 +66,14 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll; /* turn off fixed for smoother scroll */
+    background-size: cover;      /* or 100% auto */
+    background-position: center top;
+  }
+}
         .parallax.one {
             background-image: url('/images/Ballon_flying_in.jpg'); /* replace with your first image */
         }
