@@ -13,15 +13,14 @@
             text-align: center;
         }
 
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 50px 20px;
+        header { 
+            background-color: #004080; 
+            color: white; 
+            padding: 5px 10px; 
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+
+
+
         header {
             font-size: 1.2em;
         }
@@ -145,13 +144,96 @@ img {
   }
 }
 
+/* Sticky top bar */
+#topBar {
+    position: sticky;
+    top: 0;
+    background-color: #004080;
+    color: white;
+    padding: 12px 20px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+        border-bottom: 3px solid black; /* adds a black line at the bottom */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* optional: subtle shadow */
+}
+
+/* Name on the left */
+#name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Icon next to name */
+#nameIcon {
+    width: 20px;  /* adjust size as needed */
+    height: 20px;
+    border-radius: 60%; /* optional: make it circular */
+    object-fit: cover;  /* maintain aspect ratio */
+}
+
+/* Hamburger icon */
+#menuIcon {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: block;
+}
+
+/* Toggle buttons container (dropdown) */
+#sectionToggle {
+    display: none; /* hidden initially */
+    position: absolute;       /* position relative to topBar */
+    right: 0px;              /* align to right edge */
+    top: 50px;                /* drop below top bar */
+    background-color: #004080;
+    padding: 15px;
+    border-radius: 5px;
+    flex-direction: column;   /* stack vertically */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Buttons in dropdown */
+#sectionToggle .btn {
+    padding: 8px 16px;
+    background-color: white;
+    color: #004080;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#sectionToggle .btn:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
 
     </style>
 </head>
 <body>
 
+<div id="topBar">
+    <!-- Name on the left -->
+    <div id="name">Ian Wood
+        <img src="images/your-icon.png" alt="Icon" id="nameIcon">
+    </div>
+
+    <!-- Hamburger icon on the right -->
+    <div id="menuIcon">≡</div>
+
+    <!-- Toggle buttons (hidden by default) -->
+    <div id="sectionToggle">
+        <button class="btn" data-target="storySection">Story</button>
+        <button class="btn" data-target="exploreSection">Exploration</button>
+    </div>
+</div>
+
 <header>
-    <h1>Ian Wood</h1>
     <p> Law Graduate | M.Sc. Computer Science | Interested in Legal Practice / Tech </p>
 </header>
 
@@ -159,7 +241,7 @@ img {
     <div class="parallax-text">Welcome to my Story!!</div>
 </div>
 
-<section>
+<section id= "storySection">
     <h2>A long, long time ago in a small town in Colombia</h2>
     <div class="story">
 
@@ -205,7 +287,7 @@ img {
 </div>
 
 
-<section>
+<section id="exploreSection">
  <!-- Currently Exploring Section -->
         <h2>What I've Explored </h2>
         
@@ -260,6 +342,32 @@ cvButton.addEventListener("click", function (event) {
     }, 1000);
 });
 
+const menuIcon = document.getElementById('menuIcon');
+const sectionToggle = document.getElementById('sectionToggle');
+
+// Toggle visibility of buttons when hamburger is clicked
+menuIcon.addEventListener('click', () => {
+    if (sectionToggle.style.display === 'flex') {
+        sectionToggle.style.display = 'none';
+    } else {
+        sectionToggle.style.display = 'flex';
+        sectionToggle.style.flexDirection = 'column'; // for mobile
+    }
+});
+
+// Smooth scroll
+document.querySelectorAll('#sectionToggle .btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+
+        // Optional: hide menu after click on mobile
+        if (window.innerWidth < 700) {
+            sectionToggle.style.display = 'none';
+        }
+    });
+});
  
 </script>
 </html>
