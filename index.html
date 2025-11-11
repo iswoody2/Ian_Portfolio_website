@@ -101,11 +101,12 @@
 
 .section {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-img {
+.centered img {
   width: 150px;
   height: auto;
   border-radius: 10px;
@@ -113,7 +114,7 @@ img {
 }
 
 .section img {
-  width: 150px;
+  width: 120px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -290,8 +291,10 @@ img {
 <section id="exploreSection">
  <!-- Currently Exploring Section -->
         <h2>What I've Explored </h2>
-        
-        <img src="https://www.kindpng.com/picc/m/385-3852226_melanie-martinez-pixel-art-hd-png-download.png" alt="Melanie Martinez Pixel Art"> 
+        <div class="centered">
+        <img src="https://www.kindpng.com/picc/m/385-3852226_melanie-martinez-pixel-art-hd-png-download.png" alt="Melanie Martinez Pixel Art">
+        </div> 
+
         <p>
            I believe that staying curious is as important as staying informed. Here’s what I’ve been reading, studying, and exploring to deepen my understanding of technology, creativity, and the laws that shape them:
         </p>
@@ -300,7 +303,15 @@ img {
                 <img src="images/Blood_Sweat_pixels.png" alt="Blood Sweat and Pixels Book Cover">
                 <h3>"Blood, Sweat, and Pixels" – Jason Schreier</h3>
                 <p>
-                    By studying the processes behind creative and technical projects, I gained insight into the environments clients navigate. This understanding prepares me to approach legal issues with context and clarity.
+                    By studying the development journeys behind major games, I gained insight into the complex interplay between creativity, technology, and business pressures. Understanding how teams navigate deadlines, budgets, and stakeholder demands has strengthened my ability to approach legal issues with commercial context and practical empathy.
+                </p>
+                </div>
+                
+                <div class="section right">
+                <img src="images/Presentation.png" alt="Epyllion by Matthew Ball">
+                <h3>Epyllion: The State of Video Gaming in 2025 – Matthew Ball</h3>
+                <p>
+                    Through this analysis of the gaming industry’s shifting economics and regulation, I gained insight into how global market forces, platform policies, and emerging technologies impact business growth. It strengthened my ability to view legal challenges through a commercial lens, understanding how innovation, competition, and policy evolve together.
                 </p>
                 </div>
 
