@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ian Wood – Law Graduate and Computer Science MSc student exploring law, technology, and the video game industry.">
+    <meta property="og:title" content="Ian Wood | Law Student">
+    <meta property="og:description" content="Exploring legal practice, technology, and innovation.">
     <title>Ian Wood | Law Student</title>
     <style>
         body {
@@ -17,9 +20,6 @@
             background-color: #004080; 
             color: white; 
             padding: 5px 10px; 
-        }
-
-        header {
             font-size: 1.2em;
         }
 
@@ -233,7 +233,7 @@
 </div>
 
 <header>
-    <p> Law Graduate | M.Sc. Computer Science | Interested in Legal Practice / Tech </p>
+    <p>Law Graduate | M.Sc. Computer Science | Interested in Legal Practice / Tech</p>
 </header>
 
 <div class="parallax one">
@@ -303,7 +303,7 @@
                 <img src="images/Blood_Sweat_pixels.png" alt="Blood Sweat and Pixels Book Cover">
                 <h3>"Blood, Sweat, and Pixels" – Jason Schreier</h3>
                 <p>
-                    By studying the development journeys behind major games, I gained insight into the complex interplay between creativity, technology, and business pressures. Understanding how teams navigate deadlines, budgets, and stakeholder demands has strengthened my ability to approach legal issues with commercial context and practical empathy.
+                    By examining the production challenges behind major games, I developed an understanding of how creative ambition interacts with deadlines, budgets, and technical constraints. This strengthened my ability to assess legal issues with awareness of operational realities and the pressures faced by project teams.
                 </p>
                 </div>
                 
@@ -311,17 +311,27 @@
                 <img src="images/Presentation.png" alt="Epyllion by Matthew Ball">
                 <h3>Epyllion: The State of Video Gaming in 2025 – Matthew Ball</h3>
                 <p>
-                    Through this analysis of the gaming industry’s shifting economics and regulation, I gained insight into how global market forces, platform policies, and emerging technologies impact business growth. It strengthened my ability to view legal challenges through a commercial lens, understanding how innovation, competition, and policy evolve together.
+                    This analysis of the industry’s evolving business models and regulation deepened my understanding of how competition, platform power, and technological change shape market behaviour. It enhanced my ability to evaluate legal questions within a broader strategic and economic context.
                 </p>
                 </div>
 
                 <div class="section left">
-                <img src="images/Press_Reset.png" alt="Epyllion by Matthew Ball">
+                <img src="images/Press_Reset.png" alt="Press Reset Book Cover">
                 <h3>Press Reset: Ruin and Recovery in the Video Game industry – Jason Schreier</h3>
                 <p>
-                    By exploring studio closures and industry restructuring, I gained insight into how organisational decisions, employment practices, and contracting shape creative businesses. It strengthened my ability to approach legal challenges with commercial awareness and practical empathy for those affected.
+                    Exploring studio closures and workforce disruption highlighted the legal and ethical implications of employment structures, restructuring and contractual practices. This strengthened my appreciation for the human impact of commercial decisions and the importance of clarity and fairness in organisational governance.
                 </p>
                 </div>
+
+                <div class="section left">
+                <img src="images/Play_Nice.png" alt="Play Nice Book Cover">
+                <h3>Play Nice: The Rise, Fall, and Future Of Blizzard Entertainment – Jason Schreier</h3>
+                <p>
+                    Examining Blizzard’s evolution and corporate restructuring provided insight into the legal challenges surrounding mergers, acquisitions and incentives. It developed my ability to analyse complex commercial dynamics and their effects on both creativity and corporate accountability.
+                </p>
+                </div>
+
+
                 <br>
                 <hr>
                 <h2>Esports Industry </h2>
@@ -330,7 +340,7 @@
                 <img src="images/Esports_laws_of_World.png" alt="Blood Sweat and Pixels Book Cover">
                 <h3>"Esports Laws of the World" – DLA Piper</h3>
                 <p>
-                    Delving into the UK’s esports legal landscape gave me a clearer sense of how this fast-growing industry fits within traditional regulatory frameworks. Exploring areas like age requirements, fair competition, and consumer protection showed me how established laws adapt to new digital environments. This strengthened my ability to approach legal issues in esports with broader commercial awareness and practical insight.
+                    Delving into the UK’s esports legal landscape gave me a clearer sense of how this fast-growing industry fits within traditional regulatory frameworks. Exploring areas like age requirements, fair competition, and consumer protection showed me how established laws adapt to new digital environments.
                 </p>
                 </div>
 
@@ -343,34 +353,6 @@
 
 </body>
 <script>
- const cvButton = document.getElementById("cvButton");
-
-cvButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    cvButton.textContent = "Loading...";
-    cvButton.style.pointerEvents = "none";
-
-    setTimeout(() => {
-        // Detect iOS or mobile
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-        if (isMobile) {
-            // Open in a new tab on mobile
-            window.open(cvButton.href, '_blank');
-        } else {
-            // Force download on desktop
-            const link = document.createElement('a');
-            link.href = cvButton.href;
-            link.download = cvButton.href.split("/").pop();
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        cvButton.textContent = "Follow my Journey on Linkedin";
-        cvButton.style.pointerEvents = "auto";
-    }, 1000);
-});
 
 const menuIcon = document.getElementById('menuIcon');
 const sectionToggle = document.getElementById('sectionToggle');
