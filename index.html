@@ -56,40 +56,37 @@
         }
 
         /* Parallax sections */
-        .parallax {
-  height: 600px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+     
+
+
+    .parallax-container {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .parallax {
-    background-attachment: scroll; /* turn off fixed for smoother scroll */
-    background-size: cover;      /* or 100% auto */
-    background-position: center top;
-  }
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-        .parallax.one {
-            background-image: url('/images/Ballon_flying_in.jpg'); /* replace with your first image */
-             background-position: center 30%;
-        }
-        .parallax.two {
-            background-image: url('images/Ballon_landing.jpg'); /* replace with your second image */
-             background-position: center 30%;
-        }
+.parallax-text {
+    position: relative;
+    color: white;
+    font-size: 2em;
+    padding-top: 150px;
+    text-align: center;
+    z-index: 10; /* Make sure text is on top of layers */
+    text-shadow: 2px 3px 6px rgba(0,0,0,0.7);
+}
 
-        /* Optional overlay text on parallax */
-        .parallax-text {
-            color: white;
-            font-size: 2em;
-            padding-top: 150px;
-            text-shadow: 2px 3px 6px rgba(0,0,0,0.7);
-        }
-
-        .story {
+.story {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -169,7 +166,7 @@
 #nameIcon {
     width: 20px;  /* adjust size as needed */
     height: 20px;
-    border-radius: 60%; /* optional: make it circular */
+    border-radius: 80%; /* optional: make it circular */
     object-fit: cover;  /* maintain aspect ratio */
 }
 
@@ -219,7 +216,7 @@
 <div id="topBar">
     <!-- Name on the left -->
     <div id="name">Ian Wood
-        <img src="images/your-icon.png" alt="Icon" id="nameIcon">
+        <img src="images/Pixel_Colombia.png" alt="Icon" id="nameIcon">
     </div>
 
     <!-- Hamburger icon on the right -->
@@ -236,7 +233,12 @@
     <p>Law Graduate | M.Sc. Computer Science | Interested in Legal Practice / Tech</p>
 </header>
 
-<div class="parallax one">
+<div class="parallax-container">
+    <div class="parallax-layer" style="background-image: url('/images/Mountain-layer1.png');" data-speed="0.1"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Mountain-layer2.png');" data-speed="0.2"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Mountain-layer3.png');" data-speed="0.3"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Mountain-layer4.png');" data-speed="0.4"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Mountain-layer5.png');" data-speed="0.5"></div>
     <div class="parallax-text">Welcome to my Story!!</div>
 </div>
 
@@ -281,10 +283,20 @@
     <a id= "cvButton" class="btn" href= "https://www.linkedin.com/in/ian-wood-4b06111a1/">Follow my Journey on Linkedin</a>
 </section>
 
-<div class="parallax two">
-    <div class="parallax-text">The Journey Continues!! </div>
-</div>
+<div class="parallax-container">
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer1.png');" data-speed="0.1"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer2.png');" data-speed="0.2"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer3.png');" data-speed="0.3"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer4.png');" data-speed="0.4"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer5.png');" data-speed="0.5"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer6.png');" data-speed="0.6"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer7.png');" data-speed="0.7"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer8.png');" data-speed="0.8"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer9.png');" data-speed="0.9"></div>
+    <div class="parallax-layer" style="background-image: url('/images/Trees-layer10.png');" data-speed="1.0"></div>
 
+    <div class="parallax-text">The Journey Continues!!</div>
+</div>
 
 <section id="exploreSection">
  <!-- Currently Exploring Section -->
@@ -378,6 +390,24 @@ document.querySelectorAll('#sectionToggle .btn').forEach(button => {
         if (window.innerWidth < 700) {
             sectionToggle.style.display = 'none';
         }
+    });
+});
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const containers = document.querySelectorAll('.parallax-container');
+
+    containers.forEach(container => {
+        const containerTop = container.offsetTop;
+        const containerHeight = container.offsetHeight;
+
+        const layers = container.querySelectorAll('.parallax-layer');
+
+        layers.forEach(layer => {
+            const speed = parseFloat(layer.dataset.speed);
+            const yPos = (scrollTop - containerTop) * speed;
+            layer.style.transform = `translateY(${yPos}px)`;
+        });
     });
 });
  
